@@ -323,7 +323,7 @@ describe('utils', () => {
         worker
       );
 
-      expect(mockUnfetch).toBeCalledWith('https://test.com/oauth/token', {
+      expect(mockUnfetch).toBeCalledWith('https://test.com/token', {
         body: JSON.stringify(body),
         headers: { 'Content-type': 'application/json' },
         method: 'POST',
@@ -341,7 +341,7 @@ describe('utils', () => {
           },
           method: 'POST',
           timeout: 10000,
-          url: 'https://test.com/oauth/token'
+          url: 'https://test.com/token'
         },
         expect.arrayContaining([expect.anything()])
       );
@@ -395,11 +395,11 @@ describe('utils', () => {
         });
       } catch (error) {
         expect(error.message).toBe(
-          `HTTP error. Unable to fetch https://test.com/oauth/token`
+          `HTTP error. Unable to fetch https://test.com/token`
         );
         expect(error.error).toBe('request_error');
         expect(error.error_description).toBe(
-          `HTTP error. Unable to fetch https://test.com/oauth/token`
+          `HTTP error. Unable to fetch https://test.com/token`
         );
       }
     });
