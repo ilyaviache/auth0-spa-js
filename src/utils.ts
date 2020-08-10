@@ -317,7 +317,7 @@ export const oauthToken = async (
   worker
 ) =>
   await getJSON(
-    `${baseUrl}/oauth/token`,
+    `${baseUrl}/token`,
     timeout,
     audience || 'default',
     scope,

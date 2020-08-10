@@ -283,7 +283,7 @@ describe('utils', () => {
         code_verifier: 'code_verifierIn'
       });
 
-      expect(mockUnfetch).toBeCalledWith('https://test.com/oauth/token', {
+      expect(mockUnfetch).toBeCalledWith('https://test.com/token', {
         body:
           '{"redirect_uri":"http://localhost","grant_type":"authorization_code","client_id":"client_idIn","code":"codeIn","code_verifier":"code_verifierIn"}',
         headers: { 'Content-type': 'application/json' },
