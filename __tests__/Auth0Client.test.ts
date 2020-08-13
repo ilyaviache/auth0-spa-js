@@ -189,7 +189,7 @@ describe('Auth0Client', () => {
       code_verifier: '123',
       grant_type: 'authorization_code',
       code: 'my_code',
-      scope: 'openid profile email'
+      post_logout_redirect_uri: 'http://localhost'
     });
   });
 
@@ -310,7 +310,7 @@ describe('Auth0Client', () => {
         grant_type: 'refresh_token',
         redirect_uri: 'my_callback_url',
         refresh_token: 'my_refresh_token',
-        scope: 'openid profile email offline_access'
+        post_logout_redirect_uri: 'http://localhost'
       },
       1
     );
@@ -726,7 +726,7 @@ describe('Auth0Client', () => {
       custom_param: 'hello world',
       another_custom_param: 'bar',
       code_verifier: '123',
-      scope: 'openid profile email'
+      post_logout_redirect_uri: 'http://localhost'
     });
   });
 
@@ -767,7 +767,7 @@ describe('Auth0Client', () => {
       refresh_token: 'a_refresh_token',
       custom_param: 'hello world',
       another_custom_param: 'bar',
-      scope: 'openid profile email offline_access'
+      post_logout_redirect_uri: 'http://localhost'
     });
 
     expect(access_token).toEqual('my_access_token');

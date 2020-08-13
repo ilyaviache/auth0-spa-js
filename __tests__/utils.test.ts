@@ -285,7 +285,7 @@ describe('utils', () => {
 
       expect(mockUnfetch).toBeCalledWith('https://test.com/token', {
         body:
-          '{"redirect_uri":"http://localhost","grant_type":"authorization_code","client_id":"client_idIn","code":"codeIn","code_verifier":"code_verifierIn"}',
+          '{"redirect_uri":"http://localhost","post_logout_redirect_uri":"http://localhost","grant_type":"authorization_code","client_id":"client_idIn","code":"codeIn","code_verifier":"code_verifierIn"}',
         headers: { 'Content-type': 'application/json' },
         method: 'POST',
         signal: abortController.signal
@@ -304,7 +304,7 @@ describe('utils', () => {
       const spy = jest.spyOn(worker, 'postMessage');
       const body = {
         redirect_uri: 'http://localhost',
-        scope: '__test_scope__',
+        post_logout_redirect_uri: 'http://localhost',
         grant_type: 'authorization_code',
         client_id: 'client_idIn',
         code: 'codeIn',

@@ -325,7 +325,7 @@ export const oauthToken = async (
       method: 'POST',
       body: JSON.stringify({
         redirect_uri: window.location.origin,
-        scope,
+        post_logout_redirect_uri: window.location.origin,
         ...options
       }),
       headers: {
